@@ -18,6 +18,7 @@ Pod::Spec.new do |s|
     ss.ios.dependency 'BlocksKit/MessageUI'
     ss.ios.dependency 'BlocksKit/QuickLook'
     ss.ios.dependency 'BlocksKit/UIKit'
+    ss.ios.dependency 'BlocksKit/AlertSheet'
   end
 
   s.subspec 'Core' do |ss|
@@ -50,4 +51,11 @@ Pod::Spec.new do |s|
     ss.platform = :ios
     ss.source_files = 'BlocksKit/BlocksKit+UIKit.h', 'BlocksKit/UIKit/*.{h,m}'
   end
+
+    s.subspec 'AlertSheet' do |ss|
+        ss.dependency 'BlocksKit/Core'
+        ss.dependency 'BlocksKit/DynamicDelegate'
+        ss.platform = :ios
+        ss.source_files = 'BlocksKit/BlocksKit+AlertSheet.h', 'BlocksKit/AlertSheet/*.{h,m}'
+    end
 end
